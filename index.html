@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="font-family: ABeeZee, sans-serif">
+<nav>
+<div style="color:white;margin-left:20px;font-size:30px">Redjechta Aymen's Web site for WEB 3D  <div id="tp"><a href="#tppage"> TPs </a> </div> <div id="courses"> <a href="#courspage"> Courses </a> </div> <div id="home"> <a href="#homepage"> Home </a> </div> </div>
+</nav>
+<section id="homepage" style="height:753px;">
+<div>
+<h1 style="text-align:center;padding-top:290px;font-size:50px" > Welcome To My Web Site <br><br> Web 3D </h1>
+</div>
+<div> 
+<h3 style="text-align:right;margin-right:25px;padding-top:220px;font-size:30px">Supervised By Mrs.Douar</h3>
+</div>
+</section>
+<section id="courspage" style="height:753px;">
+<h1 id="courstitle" style="margin-left:30px;font-size:30px"><b><u> Concernant les cours du module</u> : </b> </h1>
+<br><b style="font-size:20px">
+<OL Type=1>
+<LI>La Technologie 3D</LI>
+<UL>
+<LI>Introduction à la RV et ses applications</LI>
+<LI>Evolution, Standards 3D</LI>
+</UL>
+<LI>Design RV 3D</LI>
+<UL>
+<LI>Logiciels de conception 3D</LI>
+<LI>Modélisation et animation 3D avec Blender</LI>
+<LI>Portabilité vers les Standards de la RV (VRML/X3D)</LI>
+<LI>Conception des Interfaces 3D utilisateur pour des applications de la RV</LI>
+</UL>
+<LI>Interaction RV</LI>
+<UL>
+<LI>Visualisation, Navigation et Interaction 3D</LI>
+<LI>Software de visualisation et interaction</LI>
+</UL>
+<LI>Technologies VRML/X3D</LI>
+<UL>
+<LI>VRML, X3D — Extensible 3D Graphiques</LI>
+<LI>Géométrie, apparence, événements et scripts</LI>
+<LI>X3D Scène Graphique</LI>
+<LI>HTML 3D, HTML5/ JavaScript APIs</LI>
+</UL>
+<LI>Les interfaces 3D et l’Interaction via Programmation.</LI>
+<UL>
+<LI>Techniques de base d’interaction 3D externe</LI>
+<LI>Animation.</LI>
+<LI>Interface X3D/VRML et Java</LI>
+<LI>Web 3D.</LI>
+</UL>
+</OL>
+</b>
+</section>
+<section id="tppage" style="height:753px;">
+<h1 id="courstitle" style="margin-left:30px;font-size:30px"><b> Les TPs seront affichés prochainement ! </b> </h1>
+<IMG title="Contact me" id="phone" src="btn.png" alt="Contact me"/>
+<div id="greybg" class="greys">
+<img class="contact" id="infos">
+<span class="close" style="font-size:80px">&times;</span>
+</section>
+<script>
+var img = document.getElementById("phone");
+var bg = document.getElementById("greybg");
+var contact = document.getElementById("infos");
+img.onclick = function(){
+bg.style.display="block";
+contact.src = "contact.png";
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+bg.style.display = "none";
+}
+</script>
+</body>
