@@ -1,8 +1,6 @@
-body{
+#homepage{
 	background-image: url("background.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
+	background-size:cover;
 }
 #courstitle{
 	padding-top:100px;
@@ -19,7 +17,7 @@ nav{
     width: 1300px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background: #1C6381;
+    background: #B895FF;
 	border: 3px solid #FFFFFF;
 	border-radius: 70px;
 	height: 70px;
