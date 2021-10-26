@@ -1,4 +1,7 @@
-
+#homepage{
+	background-image: url("background.jpg");
+	background-size:cover;
+}
 #courstitle{
 	padding-top:100px;
 }
