@@ -6,6 +6,7 @@
 <body style="font-family: ABeeZee, sans-serif;background-color:#F5F5F5;">
 
 <script src="https://threejs.org/build/three.min.js"></script>
+<script src="https://github.com/mrdoob/three.js/tree/master/examples/js/controls/OrbitControls.js"></script>
 <!-- GLTFLoader.js source -->
 <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
 
@@ -104,6 +105,24 @@
     init();
     setLight();
     loadGLTF();
+	const clock = new THREE.Clock()
+
+const tick = () =>
+{
+
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update Orbital Controls
+     controls.update()
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()
     animate();
 </script>
 
