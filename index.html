@@ -71,14 +71,14 @@
 
     var camera = new THREE.PerspectiveCamera(50, window.innerWidth /
 	window.innerHeight, 1, 10000);
-		const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.1;
-        controls.rotateSpeed = 0.1;
-		
 	camera.position.set(0, 10.3, 10);
 	camera.rotation.x = -0.08;
 
+	const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
+    controls.rotateSpeed = 0.1;
+	controls.update();
 		
     const scene = new THREE.Scene();
 	scene.background = new THREE.Color("rgb(245, 245, 245)");
