@@ -7,7 +7,6 @@
 
 <script src="https://threejs.org/build/three.min.js"></script>
 <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/FlyControls.js"></script>
 <!-- GLTFLoader.js source -->
 <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
 
@@ -93,7 +92,6 @@ window.innerHeight, 1, 10000);
             gltf.scene.position.z = 5;
         });
 		const controls = new OrbitControls(camera, renderer.domElement);
-		controls.update();
 		
     function animate() {
         requestAnimationFrame(animate);
