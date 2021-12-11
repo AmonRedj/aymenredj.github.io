@@ -89,7 +89,6 @@ window.innerHeight, 1, 10000);
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
         });
-    }
 
     function animate() {
         requestAnimationFrame(animate);
@@ -97,9 +96,6 @@ window.innerHeight, 1, 10000);
         renderer.render(scene, camera);
     }
 
-    init();
-    setLight();
-    loadGLTF();
     animate();
 </script>
 
