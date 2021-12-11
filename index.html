@@ -61,49 +61,17 @@
 <section id="tppage;" style="height:753px;">
 <h1 id="courstitle" style="margin-left:30px;font-size:30px"><b> Les TPs seront affichés prochainement ! </b> </h1>
 <script>
-    const renderer = new THREE.WebGLRenderer();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
-    const scene = new THREE.Scene();
-    let Mesh;
-    let light;
-
-    function init() {
-        scene.background = new THREE.Color('black');
-        camera.position.set(0, 10, 20);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-    }
-
-    function setLight() {
-        light = new THREE.AmbientLight(0xffffff); // soft white light
-        scene.add(light);
-    }
-
-    function loadGLTF() {
-        let balloonLoader = new THREE.GLTFLoader();
-
-        balloonLoader.load('coffeeshop.gltf', (gltf) => {
-            Mesh = gltf.scene;
-            Mesh.scale.set(0.2,0.2,0.2);
-            scene.add(Mesh);
-            Mesh.position.x = 0;
-            Mesh.position.y = 10;
-            Mesh.position.z = 15;
-        });
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        if (Mesh && Mesh.rotation) {
-            Mesh.rotation.y -= 0.005;
-        }
-        renderer.render(scene, camera);
-    }
-
-    init();
-    setLight();
-    loadGLTF();
-    animate();
+	const gltfLoader = new GLTFLoader();
+    let tl = gsap.timeline();
+	console.log('loading scene...');
+	gltfLoader.load('coffeeshop.gltf', (gltf) => {
+    gltf.scene.scale.set(0.01, 0.01, 0.01);
+    gltf.scene.rotation.set(0.4, 0, 0);
+    scene.add(gltf.scene);
+    console.log('scene loaded');
+    tl.to(gltf.scene.rotation, {y: 3.6, duration: 4});
+    tl.to(gltf.scene.scale, {x: 0.45, y: 0.45, z: 0.45, duration: 4}, "-=4");
+	
 </script>
 
 <IMG title="Contact me" id="phone" src="btn.png" alt="Contact me"/>
