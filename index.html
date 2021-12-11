@@ -69,7 +69,7 @@
 
     function init() {
         scene.background = new THREE.Color('black');
-        camera.position.set(0, 10, 20);
+        camera.position.set(0, 10, 30);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
     }
@@ -86,7 +86,7 @@
 
         balloonLoader.load('coffeeshop.gltf', (gltf) => {
             Mesh = gltf.scene;
-            Mesh.scale.set(0.8,0.8,0.8);
+            Mesh.scale.set(0.2,0.2,0.2);
 			Mesh.rotation.set(0.4, 3.6, 0)
             scene.add(Mesh);
             Mesh.position.x = 0;
