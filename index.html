@@ -62,37 +62,32 @@
 <section id="tppage;" style="height:753px;">
 <h1 id="courstitle" style="margin-left:30px;font-size:30px"><b> Les TPs seront affichés prochainement ! </b> </h1>
 <script>
-    const renderer = new THREE.WebGLRenderer();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+    var renderer = new THREE.WebGLRenderer();
+ renderer.setClearColor( 0xffffff, 1);
+ renderer.setSize( window.innerWidth, window.innerHeight );
+
+    var camera = new THREE.PerspectiveCamera(50, window.innerWidth /
+window.innerHeight, 1, 10000);
+
     const scene = new THREE.Scene();
-    let Mesh;
-    let light;
-	const canvas = document.querySelector('canvas.webgl')
-    function init() {
-        scene.background = new THREE.Color('black');
-        camera.position.set(0, 10, 10);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-    }
+	document.body.appendChild( renderer.domElement );
 
-    function setLight() {
-        const pointLight = new THREE.PointLight(0xffffff, 1.3)
-		pointLight.position.set(0, 10, 15)
-		scene.add(pointLight)
+    camera.position.set(0, 10, 10);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    const pointLight = new THREE.PointLight(0xffffff, 1.3)
+	pointLight.position.set(0, 10, 15)
+	scene.add(pointLight)
+	
+        let gltfldr = new THREE.GLTFLoader();
 
-    }
-
-    function loadGLTF() {
-        let balloonLoader = new THREE.GLTFLoader();
-
-        balloonLoader.load('coffeeshop.gltf', (gltf) => {
-            Mesh = gltf.scene;
-            Mesh.scale.set(0.2,0.2,0.2);
-			Mesh.rotation.set(0.4, 3.6, 0)
-            scene.add(Mesh);
-            Mesh.position.x = 0;
-            Mesh.position.y = 9.3;
-            Mesh.position.z = 5;
+        gltfldr.load('coffeeshop.gltf', (gltf) => {
+            gltf.scene.scale.set(0.2,0.2,0.2);
+			gltf.scene.rotation.set(0.4, 3.6, 0)
+            scene.add(gltf.scene);
+            gltf.scene.position.x = 0;
+            gltf.scene.position.y = 9.3;
+            gltf.scene.position.z = 5;
         });
     }
 
@@ -105,24 +100,6 @@
     init();
     setLight();
     loadGLTF();
-	const clock = new THREE.Clock()
-
-const tick = () =>
-{
-
-    const elapsedTime = clock.getElapsedTime()
-
-    // Update Orbital Controls
-     controls.update()
-
-    // Render
-    renderer.render(scene, camera)
-
-    // Call tick again on the next frame
-    window.requestAnimationFrame(tick)
-}
-
-tick()
     animate();
 </script>
 
