@@ -94,13 +94,24 @@ window.innerHeight, 1, 10000);
 		const controls = new THREE.OrbitControls(camera, renderer.domElement);
 		controls.enableDamping = true;
 		
-    function animate() {
-        requestAnimationFrame(animate);
-		controls.update();
-        renderer.render(scene, camera);
-    }
+    const clock = new THREE.Clock()
 
-    animate();
+const tick = () =>
+{
+
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update Orbital Controls
+     controls.update()
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()
 </script>
 
 <IMG title="Contact me" id="phone" src="btn.png" alt="Contact me"/>
