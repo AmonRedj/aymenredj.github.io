@@ -62,15 +62,12 @@
 <h1 id="courstitle" style="margin-left:30px;font-size:30px"><b> Les TPs seront affichés prochainement ! </b> </h1>
 <script>
 	const gltfLoader = new GLTFLoader();
-    let tl = gsap.timeline();
 	console.log('loading scene...');
 	gltfLoader.load('coffeeshop.gltf', (gltf) => {
     gltf.scene.scale.set(0.01, 0.01, 0.01);
     gltf.scene.rotation.set(0.4, 0, 0);
     scene.add(gltf.scene);
     console.log('scene loaded');
-    tl.to(gltf.scene.rotation, {y: 3.6, duration: 4});
-    tl.to(gltf.scene.scale, {x: 0.45, y: 0.45, z: 0.45, duration: 4}, "-=4");
 	
 </script>
 
