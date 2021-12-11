@@ -71,6 +71,7 @@
 
     var camera = new THREE.PerspectiveCamera(50, window.innerWidth /
 	window.innerHeight, 1, 10000);
+	camera.position.set(0, 10.3, 10);
 	camera.rotation.x = -0.08;
 
 	const controls = new THREE.OrbitControls(camera, renderer.domElement);
