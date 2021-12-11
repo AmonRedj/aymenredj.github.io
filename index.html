@@ -94,6 +94,8 @@ window.innerHeight, 1, 10000);
         });
 		const controls = new OrbitControls(camera, renderer.domElement);
 		controls.enableDamping = true;
+		controls.update();
+		
     function animate() {
         requestAnimationFrame(animate);
 		controls.update();
