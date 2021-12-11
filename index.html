@@ -92,17 +92,10 @@
             Mesh.position.z = 5;
         });
     }
-
-    function animate() {
-        requestAnimationFrame(animate);
-		
-        renderer.render(scene, camera);
-    }
-
     init();
     setLight();
     loadGLTF();
-    animate();
+        renderer.render(scene, camera);
 </script>
 
 <IMG title="Contact me" id="phone" src="btn.png" alt="Contact me"/>
