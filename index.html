@@ -93,6 +93,7 @@ window.innerHeight, 1, 10000);
         });
 		const controls = new THREE.OrbitControls(camera, renderer.domElement);
 		controls.enableDamping = true;
+		controls.target.set(1, 4, -3);
 		
     const clock = new THREE.Clock()
 
