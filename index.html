@@ -70,6 +70,7 @@
 window.innerHeight, 1, 10000);
 
     const scene = new THREE.Scene();
+	scene.background = new THREE.Color("rgb(245, 245, 245)");
 	document.body.appendChild( renderer.domElement );
 
     camera.position.set(0, 10.3, 10);
