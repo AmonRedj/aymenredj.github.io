@@ -91,7 +91,7 @@ window.innerHeight, 1, 10000);
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
         });
-		const controls = new OrbitControls(camera, renderer.domElement);
+		const controls = new THREE.OrbitControls(camera, renderer.domElement);
 		
     function animate() {
         requestAnimationFrame(animate);
