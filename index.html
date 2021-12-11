@@ -92,6 +92,7 @@ window.innerHeight, 1, 10000);
             gltf.scene.position.z = 5;
         });
 		const controls = new THREE.OrbitControls(camera, renderer.domElement);
+		controls.enableDamping = true;
 		
     function animate() {
         requestAnimationFrame(animate);
