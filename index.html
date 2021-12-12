@@ -134,7 +134,7 @@ function glassMaterial(){
     dragControls.addEventListener( 'dragstart', function ( event ) {
       controls.enabled = false;
       savedColor = event.object.material.color;
-      event.object.material.color = new THREE.Color(1, 0, 0);
+      event.object.material.color = new THREE.Color(0x000000);
     });
     dragControls.addEventListener( 'dragend', function ( event ) {
       event.object.material.color = savedColor;
