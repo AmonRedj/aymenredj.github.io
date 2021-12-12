@@ -118,13 +118,13 @@
 			objects.push(plate);
         });
 		var savedColor;
-		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
-    dragControls.addEventListener( 'dragstart', function ( event ) {
+		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
+    dragControls.addEventListener('dragstart', function ( event ) {
       controls.enabled = false;
       savedColor = event.object.material.color;
       event.object.material.color = new THREE.Color(1, 0, 0);
     });
-    dragControls.addEventListener( 'dragend', function ( event ) {
+    dragControls.addEventListener('dragend', function ( event ) {
       event.object.material.color = savedColor;
       controls.enabled = true;
     });
