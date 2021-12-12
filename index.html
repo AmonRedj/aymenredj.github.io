@@ -92,7 +92,7 @@
 	pointLight.position.set(0, 10, 15)
 	scene.add(pointLight)
 	
-	var cup,bottle,pack,coockie,coockies,plate;
+	var cup,bottle,packet,cookie,cookies,plate;
         let gltfldr = new THREE.GLTFLoader();
 
         gltfldr.load('coffeeshop.gltf', (gltf) => {
@@ -103,8 +103,23 @@
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
 			cup=gltf.scene.getObjectByName("cup");
-			cup.position.y = 50;
+			bottle=gltf.scene.getObjectByName("bottle");
+			packet=gltf.scene.getObjectByName("packet");
+			cookie=gltf.scene.getObjectByName("cookie");
+			cookies=gltf.scene.getObjectByName("cookies");
+			plate=gltf.scene.getObjectByName("plate");
         });
+		var savedColor;
+		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
+    dragControls.addEventListener( 'dragstart', function ( event ) {
+      controls.enabled = false;
+      savedColor = event.object.material.color;
+      event.object.material.color = new THREE.Color(1, 0, 0);
+    });
+    dragControls.addEventListener( 'dragend', function ( event ) {
+      event.object.material.color = savedColor;
+      controls.enabled = true;
+    });
 		const clock = new THREE.Clock();
 
     function animate() {
