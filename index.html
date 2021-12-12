@@ -117,7 +117,6 @@
 			objects.push(plate);
         });
 		var savedColor;
-		var material = new THREE.MeshNormalMaterial();
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
 		dragControls.addEventListener('dragstart', function ( event ) {
 			savedColor = event.object.material.color.getHex();
