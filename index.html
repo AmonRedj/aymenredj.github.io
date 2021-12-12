@@ -97,6 +97,17 @@
 		var savedColor;
         let gltfldr = new THREE.GLTFLoader();
 
+function glassMaterial(){
+      var glass = new THREE.MeshPhysicalMaterial({
+        reflectivity:1,
+        roughness:0,
+        metalness:0,
+        transmission:1,
+        thickness:0.5
+      });
+      return glass;
+    }
+
         gltfldr.load('coffeeshop.gltf', (gltf) => {
             gltf.scene.scale.set(0.2,0.2,0.2);
 			let coffeeshop=gltf.scene;
@@ -105,16 +116,22 @@
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
 			cup=coffeeshop.getObjectByName("cup");
+			cup.material=glassMaterial();
 			objects.push(cup);
 			bottle=coffeeshop.getObjectByName("bottle");
+			bottle.material=glassMaterial();
 			objects.push(bottle);
 			packet=coffeeshop.getObjectByName("packet");
+			packet.material=glassMaterial();
 			objects.push(packet);
 			cookie=coffeeshop.getObjectByName("cookie");
+			cookie.material=glassMaterial();
 			objects.push(cookie);
 			cookies=coffeeshop.getObjectByName("cookies");
+			cookies.material=glassMaterial();
 			objects.push(cookies);
 			plate=coffeeshop.getObjectByName("plate");
+			plate.material=glassMaterial();
 			objects.push(plate);
             scene.add(gltf.scene);
         });
