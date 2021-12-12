@@ -105,6 +105,7 @@
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
 			cup=coffeeshop.getObjectByName("cup");
+			cup.position.x = 5;
 			objects.push(cup);
 			bottle=coffeeshop.getObjectByName("bottle");
 			objects.push(bottle);
@@ -117,7 +118,6 @@
 			plate=coffeeshop.getObjectByName("plate");
 			objects.push(plate);
         });
-		cup.position.x = 5;
       controls.enabled = false;
 		var savedColor;
 		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
