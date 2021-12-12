@@ -110,18 +110,23 @@
 			plate=gltf.scene.getObjectByName("plate");
         });
 		var savedColor;
+		
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
-    dragControls.addEventListener( 'dragstart', function ( event ) {
-      controls.enabled = false;
-      savedColor = event.object.material.color;
-      event.object.material.color = new THREE.Color(1, 0, 0);
-    });
-    dragControls.addEventListener( 'dragend', function ( event ) {
-      event.object.material.color = savedColor;
-      controls.enabled = true;
-    });
+		dragControls.addEventListener('dragstart'; dragStartCallback);
+		dragControls.addEventListener('dragend'; dragENDCallback);
+		
+		 function dragStartCallback ( event){
+			savedColor = event.object.material.color.getHex();
+			event.object.material.color.setHex(0x000000);
+		 }
+		 
+		 function dragEndCallback ( event){
+			event.object.material.color.setHex(savedColor);
+		 }
+		
 		const clock = new THREE.Clock();
 
+    animate();
     function animate() {
 		const elapsedTime = clock.getElapsedTime();
 		controls.update();
@@ -129,7 +134,6 @@
         requestAnimationFrame(animate);
     }
 
-    animate();
 </script>
 
 <IMG title="Contact me" id="phone" src="btn.png" alt="Contact me"/>
