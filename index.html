@@ -117,6 +117,7 @@
 			plate=coffeeshop.getObjectByName("plate");
 			objects.push(plate);
         });
+		cup.position.x = 5;
       controls.enabled = false;
 		var savedColor;
 		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
