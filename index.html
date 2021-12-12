@@ -116,31 +116,28 @@ function glassMaterial(){
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
 			cup=coffeeshop.getObjectByName("cup");
-			cup.material=glassMaterial();
 			objects.push(cup);
 			bottle=coffeeshop.getObjectByName("bottle");
-			bottle.material=glassMaterial();
 			objects.push(bottle);
 			packet=coffeeshop.getObjectByName("packet");
-			packet.material=glassMaterial();
 			objects.push(packet);
 			cookie=coffeeshop.getObjectByName("cookie");
-			cookie.material=glassMaterial();
 			objects.push(cookie);
 			cookies=coffeeshop.getObjectByName("cookies");
-			cookies.material=glassMaterial();
 			objects.push(cookies);
 			plate=coffeeshop.getObjectByName("Plate");
-			plate.material=glassMaterial();
 			objects.push(plate);
             scene.add(gltf.scene);
         });
 		
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
-    dragControls.addEventListener('dragstart', function (event) {
+    dragControls.addEventListener( 'dragstart', function ( event ) {
       controls.enabled = false;
+      savedColor = event.object.material.color;
+      event.object.material.color = new THREE.Color(1, 0, 0);
     });
-    dragControls.addEventListener('dragend', function (event) {
+    dragControls.addEventListener( 'dragend', function ( event ) {
+      event.object.material.color = savedColor;
       controls.enabled = true;
     });
 		
