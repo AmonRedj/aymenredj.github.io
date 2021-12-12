@@ -61,11 +61,12 @@
 </b>
 </section>
 <section id="tppage;" style="text-align:center">
-<h1 id="courstitle" style="margin-left:30px;font-size:30px"><b> Le 1ér TP ( table et chaises ) ! </b> </h1>
+<h1 style="margin-left:30px;font-size:30px"><b> Le 2ème TP ( table et chaises ) ! </b> </h1><br><br><br><br>
 	<img src="blender_table_chairs.PNG" style="height:500px;width:800px"><br><br><br><br>
 	<img src="blender_table_chairs2.PNG" style="height:500px;width:800px"><br><br><br><br>
-	<h3> et voici le render </h3>
+	<h1> Et voici le render </h1>
 	<img src="blender_table_chairs_render.PNG" style="height:500px;width:800px"><br><br><br><br>
+<h1 style="margin-left:30px;font-size:30px"><b> Le 3ème TP ( une scene 3D ) ! </b> </h1><br><br><br><br>
 <script>
     var renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -101,16 +102,6 @@
 		var savedColor;
         let gltfldr = new THREE.GLTFLoader();
 
-function glassMaterial(){
-      var glass = new THREE.MeshPhysicalMaterial({
-        reflectivity:1,
-        roughness:0,
-        metalness:0,
-        transmission:1,
-        thickness:0.5
-      });
-      return glass;
-    }
 
         gltfldr.load('coffeeshop.gltf', (gltf) => {
             gltf.scene.scale.set(0.2,0.2,0.2);
@@ -144,8 +135,6 @@ function glassMaterial(){
       event.object.material.color = savedColor;
       controls.enabled = true;
     });
-		
-      controls.enabled = false;
 		
 		const clock = new THREE.Clock();
 
