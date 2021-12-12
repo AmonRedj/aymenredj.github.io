@@ -117,7 +117,7 @@
 			objects.push(plate);
         });
 		var savedColor;
-		
+		var material = new THREE.MeshNormalMaterial();
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
 		dragControls.addEventListener('dragstart'; dragStartCallback);
 		dragControls.addEventListener('dragend'; dragENDCallback);
