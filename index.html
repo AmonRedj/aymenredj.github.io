@@ -94,6 +94,7 @@
 	
 	var cup,bottle,packet,cookie,cookies,plate;
 	var objects = [];
+		var savedColor;
         let gltfldr = new THREE.GLTFLoader();
 
         gltfldr.load('coffeeshop.gltf', (gltf) => {
@@ -105,7 +106,6 @@
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
 			cup=coffeeshop.getObjectByName("cup");
-			cup.position.x = 5;
 			objects.push(cup);
 			bottle=coffeeshop.getObjectByName("bottle");
 			objects.push(bottle);
@@ -116,11 +116,7 @@
 			cookies=coffeeshop.getObjectByName("cookies");
 			objects.push(cookies);
 			plate=coffeeshop.getObjectByName("plate");
-			objects.push(plate);
-        });
-      controls.enabled = false;
-		var savedColor;
-		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
+			objects.push(plate);var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
     dragControls.addEventListener('dragstart', function ( event ) {
       controls.enabled = false;
       savedColor = event.object.material.color;
@@ -130,6 +126,9 @@
       event.object.material.color = savedColor;
       controls.enabled = true;
     });
+        });
+      controls.enabled = false;
+		
 		const clock = new THREE.Clock();
 
     animate();
