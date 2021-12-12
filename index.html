@@ -118,12 +118,12 @@
         });
 		var savedColor;
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
-		dragControls.addEventListener('dragstart', function ( event ) {
+		dragControls.addEventListener('dragstart', () => {
 			controls.enabled = false;
 			savedColor = event.object.material.color.getHex();
 			event.object.material.color.setHex(0x000000);
 		});
-		dragControls.addEventListener('dragend', function ( event ) {
+		dragControls.addEventListener('dragend', () =>  {
 		controls.enabled = true;
 			event.object.material.color.setHex(savedColor);
 		});
