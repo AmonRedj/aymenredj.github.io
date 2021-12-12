@@ -99,22 +99,23 @@
 
         gltfldr.load('coffeeshop.gltf', (gltf) => {
             gltf.scene.scale.set(0.2,0.2,0.2);
+			let coffeeshop=gltf.scene;
 			gltf.scene.rotation.set(0.4, 3.6, 0)
             scene.add(gltf.scene);
             gltf.scene.position.x = 0;
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
-			cup=gltf.scene.getObjectByName("cup");
+			cup=coffeeshop.getObjectByName("cup");
 			objects.push(cup);
-			bottle=gltf.scene.getObjectByName("bottle");
+			bottle=coffeeshop.getObjectByName("bottle");
 			objects.push(bottle);
-			packet=gltf.scene.getObjectByName("packet");
+			packet=coffeeshop.getObjectByName("packet");
 			objects.push(packet);
-			cookie=gltf.scene.getObjectByName("cookie");
+			cookie=coffeeshop.getObjectByName("cookie");
 			objects.push(cookie);
-			cookies=gltf.scene.getObjectByName("cookies");
+			cookies=coffeeshop.getObjectByName("cookies");
 			objects.push(cookies);
-			plate=gltf.scene.getObjectByName("plate");
+			plate=coffeeshop.getObjectByName("plate");
 			objects.push(plate);
         });
 		var savedColor;
