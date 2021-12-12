@@ -119,18 +119,13 @@
 		var savedColor;
 		var material = new THREE.MeshNormalMaterial();
 		var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
-		dragControls.addEventListener('dragstart', dragStartCallback);
-		dragControls.addEventListener('dragend', dragENDCallback);
-		
-		 function dragStartCallback ( event){
+		dragControls.addEventListener('dragstart', function ( event ) {
 			savedColor = event.object.material.color.getHex();
 			event.object.material.color.setHex(0x000000);
-		 }
-		 
-		 function dragEndCallback ( event){
+		});
+		dragControls.addEventListener('dragend', function ( event ) {
 			event.object.material.color.setHex(savedColor);
-		 }
-		
+		});
 		const clock = new THREE.Clock();
 
     animate();
