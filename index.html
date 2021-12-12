@@ -101,7 +101,6 @@
             gltf.scene.scale.set(0.2,0.2,0.2);
 			let coffeeshop=gltf.scene;
 			gltf.scene.rotation.set(0.4, 3.6, 0)
-            scene.add(gltf.scene);
             gltf.scene.position.x = 0;
             gltf.scene.position.y = 9.3;
             gltf.scene.position.z = 5;
@@ -116,17 +115,21 @@
 			cookies=coffeeshop.getObjectByName("cookies");
 			objects.push(cookies);
 			plate=coffeeshop.getObjectByName("plate");
-			objects.push(plate);var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
-    dragControls.addEventListener('dragstart', function ( event ) {
+			objects.push(plate);
+            scene.add(gltf.scene);
+        });
+		
+		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
+    dragControls.addEventListener('dragstart', function (event) {
       controls.enabled = false;
       savedColor = event.object.material.color;
       event.object.material.color = new THREE.Color(1, 0, 0);
     });
-    dragControls.addEventListener('dragend', function ( event ) {
+    dragControls.addEventListener('dragend', function (event) {
       event.object.material.color = savedColor;
       controls.enabled = true;
     });
-        });
+		
       controls.enabled = false;
 		
 		const clock = new THREE.Clock();
