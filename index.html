@@ -119,7 +119,7 @@
             scene.add(gltf.scene);
         });
 		
-		var dragControls = new THREE.DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
+		var dragControls = new DragControls([cup, bottle, packet, cookie, cookies, plate], camera, renderer.domElement);
     dragControls.addEventListener('dragstart', function (event) {
       controls.enabled = false;
       savedColor = event.object.material.color;
